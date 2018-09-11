@@ -1,11 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>首页</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>todos</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="./src/vue.js"></script>
 </head>
+
 <body>
-<div>这是首页</div>
+    <section class="todoapp" id="app">
+        <div>
+            <header class="header" >
+                <h1>todos</h1>
+                <input 
+                    class="new-todo" 
+                    placeholder="请输入内容" 
+                    v-model="value"  
+                    @keydown.13="addTodo"
+                />
+            </header>
+            <section v-show="list.length" class="main">
+                <input class="toggle-all" type="checkbox" v-model='isCheckedAll' />
+                <ul class="todo-list">
+                    <!--completed editing-->
+
+                    <li v-for="item,index in filterList" 
+                        :class="{completed: item.checked,editing: editId === item.id}"
+                    >
+                        <div class="view">
+                            <input class="toggle" type="checkbox" v-model="item.checked" />
+                            <label @dblclick="editTodo(item,index)">{{item.title}}</label>
+                            <button class="destroy" @click="remove(item)"></button>
+                        </div>
+                        <input 
+                            ref="editInput"
+                            class="edit" 
+                            v-model="item.title" 
+                            @blur="editDone(item)"
+                            @keydown.13="editDone(item)"
+                            @keydown.esc="cancelEdit(item)"
+                        />
+                    </li>
+                </ul>
+            </section>
+            <footer v-show="list.length" class="footer">
+	            <span class="todo-count">
+	            	<strong>{{unCheckedLen}}</strong>
+	            	<span>条未选中</span>
+	            </span>
+	            <ul class="filters">
+	            	<li><a href="#/all" :class="{selected: hash === 'all'}">All</a></li> 
+	            	<li><a href="#/active" :class="{selected: hash === 'active'}">Active</a></li> 
+	            	<li><a href="#/completed" :class="{selected: hash === 'completed'}">Completed</a></li>
+	           	</ul>
+            </footer>
+        </div>
+    </section>
 </body>
+<script>
+	/*
+		1. 增删改查数据，要使用localStorage做数据持久化
+		2. 根据hash不同，过滤渲染的数据
+			a. 全部任务
+			b. 完成的任务
+			c. 未完成的任务
+		3. 自己设计数据结构
+			
+	*/
+let list = JSON.parse(localStorage.getItem('miaov-08-06')) || [];
+
+let filterHash = {
+    all(list){
+        return list
+    },
+    active(list){
+        return list.filter(item => !item.checked)
+    },
+    completed(list){
+        return list.filter(item => item.checked)
+    }
+}
+
+let vm = new Vue({
+    el: '#app',
+    data: {
+        hash: 'all',  // 根据这个值过滤数据
+        list,
+        value: '',
+        beforeTitle: '',
+        editId: ''  //存正在编辑的id
+    },
+    watch:{
+        list:{
+            handler(){
+                localStorage.setItem('miaov-08-06',JSON.stringify(this.list))
+            },
+            deep: true
+        }
+    },
+    computed: {
+        filterList(){
+            /*if(this.hash === 'all'){
+                return this.list;
+            }else if(this.hash === 'active'){
+                return this.list.filter(item => !item.checked)
+            }else if(this.hash === 'completed'){
+                return this.list.filter(item => item.checked)
+            }*/
+            return filterHash[this.hash](this.list);
+        },
+        isCheckedAll: {
+            get(){
+                return this.list.every(item => item.checked)
+            },
+            set(newValue){
+                this.list.forEach(item => item.checked = newValue)
+            }
+        },
+        unCheckedLen(){
+            return this.list.filter(item => !item.checked).length;
+        }
+    },
+    methods: {
+       addTodo(){
+        if(this.value.trim()){
+            this.list.push({
+                id: Date.now(),
+                title: this.value,
+                checked: false
+            })
+            this.value = '';
+        }
+
+        //localStorage.setItem('miaov-08-06',JSON.stringify(this.list))
+
+       },
+       remove(todo){
+            let index = this.list.findIndex(item => item === todo);
+            if(index !== -1){
+                this.list.splice(index,1)
+            }
+            //localStorage.setItem('miaov-08-06',JSON.stringify(this.list))
+       },
+       editTodo(todo,index){
+            this.editId = todo.id;  // 记录正在编辑的id
+
+            this.beforeTitle = todo.title; // 编辑的时候，记录要编辑的这条title
+
+            // 让对应的input获取焦点
+
+            this.$nextTick( () => {
+                this.$refs.editInput[index].focus();    
+            })
+            //localStorage.setItem('miaov-08-06',JSON.stringify(this.list))
+       },
+       // 编辑完成
+       editDone(todo){
+            // 当数据的title为空，就删除
+            if(!todo.title.trim()){
+                this.remove(todo)
+            }
+            this.editId = '';// 记录正在编辑的id为空，代表没有要编辑的
+            this.beforeTitle = '';
+            //localStorage.setItem('miaov-08-06',JSON.stringify(this.list))
+       },
+       // 取消编辑
+       cancelEdit(todo){
+            console.log('取消编辑')
+            this.editId = '';
+            todo.title = this.beforeTitle;
+            this.beforeTitle = '';
+            //localStorage.setItem('miaov-08-06',JSON.stringify(this.list))
+       }
+    }
+})
+
+
+
+function hashchangeHandle(){
+    let hash = window.location.hash;
+    let hashValue = 'all'
+    if(hash){
+        hashValue = hash.slice(2)
+    }
+
+    // 判断在地址栏中拿到的hash是不是规定的三个值，不是默认为all
+    if(!filterHash[hashValue]){
+        hashValue = 'all'
+        window.location.hash = hashValue;
+    }
+    // 改变vue中hash
+    vm.hash = hashValue;
+    
+}
+hashchangeHandle();
+window.addEventListener('hashchange',hashchangeHandle)
+
+
+
+</script>
+
 </html>
