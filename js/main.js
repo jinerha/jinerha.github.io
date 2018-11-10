@@ -46,11 +46,7 @@ $(function(){
   /* 平滑滚动结束 */
 
   /* 返回顶部开始 */
-  $('#goTop').click(function(event){
-    $('#no-js').animate({
-      'scrollTop': 0
-    },1000)
-  })
+  $.fn.yestop()
   /* 返回顶部结束 */
 })
 

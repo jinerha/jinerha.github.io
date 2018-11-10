@@ -806,21 +806,3 @@ section{
   margin-bottom: 20px;
 }
 /* 联系我们结束 */
-
-/* 返回顶部开始 */
-#goTop{
-  position: fixed;
-  z-index: 999;
-  right: 6%;
-  bottom: 10%;
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 10px;
-}
-#goTop i{
-  font-size: 18px;
-  line-height: 40px;
-}
-
-/* 返回顶部结束 */
