@@ -9,12 +9,12 @@ $(function(){
       disableOnInteraction: false,
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '#banner .swiper-pagination',
       clickable: true,
     }
   });
 
-  new Swiper('#dif .swiper-container', {
+  var swiper2 = new Swiper('#dif .swiper-container', {
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
@@ -22,7 +22,7 @@ $(function(){
       disableOnInteraction: false,
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '#dif .swiper-pagination',
       clickable: true,
     },
     navigation: {
