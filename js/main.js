@@ -32,14 +32,6 @@ $(function(){
   });
   /*滚动事件结束*/
 
-  /* 返回顶部开始 */
-  $('#goTop').click(function(event){
-    $('html').animate({
-      'scrollTop': 0
-    },1000)
-  })
-  /* 返回顶部结束 */
-
   /* 滚动监听开始 */
   $('body').scrollspy({ target: '#bs-example-navbar-collapse-1' })
   /* 滚动监听结束 */
@@ -52,5 +44,13 @@ $(function(){
     },1000)
   })
   /* 平滑滚动结束 */
+
+  /* 返回顶部开始 */
+  $('#goTop').click(function(event){
+    $('#no-js').animate({
+      'scrollTop': 0
+    },1000)
+  })
+  /* 返回顶部结束 */
 })
 
