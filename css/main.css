@@ -621,7 +621,7 @@ section{
 .modular{
   background: #fff;
   padding: 6% 0;
-  border-radius: 6%;
+  border-radius: 48px;
 }
 #case .modular .row{
   padding-left: 15px;
