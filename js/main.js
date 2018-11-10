@@ -33,12 +33,10 @@ $(function(){
   /*滚动事件结束*/
 
   /* 返回顶部开始 */
-  $(function(){
-    $('#goTop').click(function(event){
-      $('html').animate({
-        'scrollTop': 0
-      },1000)
-    })
+  $('#goTop').click(function(event){
+    $('html').animate({
+      'scrollTop': 0
+    },1000)
   })
   /* 返回顶部结束 */
 
