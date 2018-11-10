@@ -24,7 +24,7 @@ var swiper = new Swiper('#banner .swiper-container', {
   }
 });
 
-var swiper = new Swiper('#dif .swiper-container', {
+var swiper2 = new Swiper('#dif .swiper-container', {
   spaceBetween: 30,
   centeredSlides: true,
   autoplay: {

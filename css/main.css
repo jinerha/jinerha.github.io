@@ -291,10 +291,7 @@ html,body{
     height: 100%;
 }
 body{
-    font-size: 16px;
-    line-height: 1.5;
     color: #1b2a74;
-    background-color: #fff;
     position: relative;
 }
 a:hover{
@@ -302,11 +299,6 @@ a:hover{
 }
 section{
     background-color: #fff;
-}
-img{
-    display: block;
-    max-width: 100%;
-    height: auto;
 }
 
 /* 全局样式结束 */
@@ -341,14 +333,14 @@ img{
   color: #fff;
 }
 
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus,
-.navbar-default .navbar-nav>.active>a:hover{
+.header .navbar-default .navbar-nav>.active>a,
+.header .navbar-default .navbar-nav>.active>a:focus,
+.header .navbar-default .navbar-nav>.active>a:hover{
   background-color: transparent;
   color: #fff;
 }
-.navbar-default .navbar-nav>.active::after,
-.navbar-default .navbar-nav>li:hover::after{
+.header .navbar-default .navbar-nav>.active::after,
+.header .navbar-default .navbar-nav>li:hover::after{
   content: "";
   position: absolute;
   width: 100%;
@@ -357,21 +349,24 @@ img{
   left: 0;
   bottom: -1px;
 }
-
-.fiexed-header-on header{
-    height: 70px;
+.header .navbar-toggle{
+  margin-top: 20px;
+  transition: 0.3s;
 }
-.fiexed-header-on header .navbar-brand{
+.fiexed-header-on .header .navbar-brand{
     width: 220px;
     height: 48px;
-    transition: width 0.3s;
+    transition: 0.3s;
 }
-.fiexed-header-on header .navbar-right{
+.fiexed-header-on .header .navbar-right{
     margin-top: -4px;
     transition: margin-top 0.3s;
 }
-.fiexed-header-on .navbar-brand{
+.fiexed-header-on .header .navbar-brand{
   margin-top: -2px;
+}
+.fiexed-header-on .header .navbar-toggle{
+  margin-top: 8px;
 }
 /* 头部样式结束 */
 
@@ -394,11 +389,19 @@ img{
   background: rgba(0,0,0,0.4);
 }
 #banner .swiper-slide:nth-child(1){
-    background: url(../img/banner1.jpg) no-repeat center center;
+    background: url(../img/banner1.jpg) no-repeat 10% center;
     background-size: cover;
 }
 #banner .swiper-slide:nth-child(2){
-    background: url(../img/banner1.jpg) no-repeat center center;
+    background: url(../img/banner1.jpg) no-repeat 10% center;
+    background-size: cover;
+}
+#banner .swiper-slide:nth-child(3){
+    background: url(../img/banner1.jpg) no-repeat 10% center;
+    background-size: cover;
+}
+#banner .swiper-slide:nth-child(4){
+    background: url(../img/banner1.jpg) no-repeat 10% center;
     background-size: cover;
 }
 #banner .col-md-8 h3{
@@ -568,7 +571,10 @@ img{
   background-color: #f6f6f6;
   position: relative;
 }
-#education .thumbnail img{
+#education img{
+  max-width: 100%;
+}
+#education .education_list img {
   width: 100%;
 }
 #education h4{
@@ -612,35 +618,21 @@ img{
   font-weight: 360;
   margin-bottom: 62px;
 }
-.Modular{
+.modular{
   background: #fff;
   padding: 6% 0;
   border-radius: 6%;
 }
-#case .media_box{
-  overflow: hidden;
-  margin-bottom: 14px;
+#case .modular .row{
+  padding-left: 15px;
+  padding-right: 15px;
 }
-#case .media_box_lt{
-  float: left;
-  width: 10%;
-}
-#case .media_box_body{
-  float: left;
-  width: 86%;
-  margin-left: 4%
-}
-#case .media_box_body p{
-  font-size: 14px;
-  line-height: 27px;
-  margin-bottom: 0;
-}
-#case .media_box_body p span{
-  font-size: 14px;
+#case p span{
   color: #cd0303;
 }
 #case .col-xs-4 img{
   margin-bottom: 8px;
+  max-width: 100%;
 }
 /* 案例结束 */
 
@@ -665,6 +657,9 @@ img{
 }
 #dif .swiper-pagination{
   position: static;
+}
+#dif img{
+  max-width: 100%;
 }
 /* 四大不同结束 */
 
@@ -699,6 +694,12 @@ img{
 #framework .thumbnail_box:hover{
   transform: scale(1.02);
   box-shadow: 0px 5px 10px rgba(27,42,116,0.2);
+}
+#framework .thumbnail_box img{
+  width: 100%;
+}
+#framework .center-block{
+  max-width: 100%;
 }
 #framework .thumbnail{
   padding: 0;
@@ -737,7 +738,7 @@ img{
   color: #fff;
 }
 #pro{
-  padding-top: 82px;
+  padding-top: 88px;
 }
 /* 架构图结束 */
 
@@ -783,6 +784,7 @@ img{
 }
 #firtest img{
   border-radius: 10px;
+  width: 100%;
 }
 /* 免费试课结束 */
 
