@@ -314,14 +314,29 @@ section{
   background-color: transparent;
   border: none;
 }
-.header .navbar-brand{
+.navbar-brand{
   width: 346px;
   height: 75px;
-  background: url(../img/logo.png) no-repeat;
-  background-size: cover;
+  padding-top: 0;
+  padding-bottom: 1px;
 }
-.header .navbar-nav{
+@media screen and (max-width: 768px){
+  .navbar-brand{
+    width: 76%;
+  }
+  .navbar-brand img{
+    margin-top: 10px;
+    max-width: 100%;
+  }
+  .navbar-collapse .navbar-right{
+    margin-top: 0;
+  }
+}
+.navbar-right{
   margin-top: 25px;
+}
+.navbar-brand img{
+  max-height: 100%;
 }
 
 .header .navbar-nav li{
@@ -349,36 +364,18 @@ section{
   left: 0;
   bottom: -1px;
 }
-.header .navbar-toggle{
+.header .navbar-toggle,.header .navbar-toggle:hover{
+  background-color: transparent;
   margin-top: 20px;
   transition: 0.3s;
-}
-.fiexed-header-on .header .navbar-brand{
-    width: 220px;
-    height: 48px;
-    transition: 0.3s;
-}
-.fiexed-header-on .header .navbar-right{
-    margin-top: -4px;
-    transition: margin-top 0.3s;
-}
-.fiexed-header-on .header .navbar-brand{
-  margin-top: -2px;
-}
-.fiexed-header-on .header .navbar-toggle{
-  margin-top: 8px;
 }
 /* 头部样式结束 */
 
 /* 轮播图开始 */
 #banner{
-  padding-top: 98px;
   position: relative;
+  padding-top: 99px;
 }
-.fiexed-header-on #banner{
-  padding-top: 74px;
-}
-
 #banner .swiper-slide::after{
   content: "";
   position: absolute;
@@ -389,19 +386,11 @@ section{
   background: rgba(0,0,0,0.4);
 }
 #banner .swiper-slide:nth-child(1){
-    background: url(../img/banner1.jpg) no-repeat 10% center;
+    background: url(../img/banner1.jpg) no-repeat 30% center;
     background-size: cover;
 }
 #banner .swiper-slide:nth-child(2){
-    background: url(../img/banner1.jpg) no-repeat 10% center;
-    background-size: cover;
-}
-#banner .swiper-slide:nth-child(3){
-    background: url(../img/banner1.jpg) no-repeat 10% center;
-    background-size: cover;
-}
-#banner .swiper-slide:nth-child(4){
-    background: url(../img/banner1.jpg) no-repeat 10% center;
+    background: url(../img/banner2.jpg) no-repeat 40% center;
     background-size: cover;
 }
 #banner .col-md-8 h3{
