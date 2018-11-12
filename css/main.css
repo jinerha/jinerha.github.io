@@ -9,7 +9,6 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
 html {
     color: #222;
     font-size: 1em;
@@ -124,7 +123,6 @@ textarea {
 .hidden {
     display: none !important;
 }
-
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -776,6 +774,7 @@ section{
   width: 100%;
 }
 /* 免费试课结束 */
+
 
 /* 联系我们开始 */
 #contact{
