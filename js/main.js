@@ -48,5 +48,16 @@ $(function(){
   /* 返回顶部开始 */
   $.fn.yestop()
   /* 返回顶部结束 */
+
+  if ($(window).width() < 768) {
+      //点击导航链接之后，把导航选项折叠起来
+     $("#bs-example-navbar-collapse-1 a").click(function () {
+      $("#bs-example-navbar-collapse-1").collapse('hide');
+    });
+     //滚动屏幕时，把导航选项折叠起来
+     $(window).scroll(function () {
+       $("#bs-example-navbar-collapse-1").collapse('hide');
+     });
+   }
 })
 
