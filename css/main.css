@@ -391,7 +391,7 @@ section{
     background: url(../img/banner2.jpg) no-repeat 40% center;
     background-size: cover;
 }
-#banner .col-md-8 h3{
+/*#banner .col-md-8 h3{
   font-size: 60px;
 }
 #banner .col-md-8 p{
@@ -401,7 +401,7 @@ section{
   font-size: 30px;
   color: red;
   line-height: 48px;
-}
+}*/
 #banner .swiper-container {
   height: 755px;
 }
@@ -805,13 +805,3 @@ section{
   margin-bottom: 20px;
 }
 /* 联系我们结束 */
-
-/* toTop开始 */
-#toTop{
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 10px;
-}
-/* toTop结束 */
