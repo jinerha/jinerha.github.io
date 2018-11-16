@@ -1,9 +1,310 @@
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster */
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+
+
 /*全局样式开始 */
+@font-face {
+  font-family: "思源黑体";
+  src: url("../fonts/Source Han Sans CN Normal.ttf") format("truetype"),
+       url("../fonts/Source Han Sans CN Normal.eot") format("embedded-opentype"),
+       url("../fonts/Source Han Sans CN Normal.svg") format("svg");
+}
+@font-face {
+  font-family: "苹方";
+  src: url("../fonts/苹方_常规.ttf") format("truetype"),
+       url("../fonts/苹方_常规.eot") format("embedded-opentype"),
+       url("../fonts/苹方_常规.svg") format("svg");
+}
 html,
 body {
   height: 100%;
 }
 body {
+  font-family: "苹方";
   color: #1b2a74;
   position: relative;
 }
@@ -32,18 +333,6 @@ section {
 #head .navbar .navbar-brand img {
   max-width: 100%;
 }
-@media (max-width: 996px) {
-  #head .navbar .navbar-brand {
-    width: 280px;
-    padding-top: 14px;
-  }
-}
-@media screen and (max-width: 768px) {
-  #head .navbar .navbar-brand {
-    width: 200px;
-    padding-top: 8px;
-  }
-}
 #head .navbar .navbar-right {
   margin-top: 25px;
 }
@@ -53,6 +342,7 @@ section {
 #head .navbar-nav li a,
 #head .navbar-nav li a:hover,
 #head .navbar-nav li a:focus {
+  font-size: 18px;
   color: #fff;
 }
 #head .navbar-default .navbar-nav > .active > a,
@@ -95,14 +385,17 @@ section {
   left: 20px;
 }
 #banner .swiper-container .swiper-slide .text_cont h2 {
+  font-family: "思源黑体";
   font-size: 60px;
   color: #fff;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 76px;
 }
 #banner .swiper-container .swiper-slide .text_cont p {
+  font-family: "思源黑体";
   color: #fff;
   font-size: 24px;
+  line-height: 37px;
 }
 #banner .swiper-container .swiper-slide .text_cont a {
   color: #fff;
@@ -127,13 +420,23 @@ section {
 }
 #banner .swiper-container .swiper-slide:nth-child(2) p:nth-of-type(1) {
   font-size: 30px;
+  font-weight: 600;
+  margin-bottom: -14px;
 }
 #banner .swiper-container .swiper-slide:nth-child(3) {
-  background: url(../img/banner3.jpg) no-repeat 30% center;
+  background: url(../img/banner4.jpg) no-repeat 30% center;
   background-size: cover;
 }
 #banner .swiper-container .swiper-slide:nth-child(3) h2 {
   font-size: 48px;
+  line-height: 64px;
+  font-weight: 400;
+}
+#banner .swiper-container .swiper-slide:nth-child(3) p {
+  font-size: 30px;
+  font-style: italic;
+  line-height: 64px;
+  font-weight: 400;
 }
 #banner .swiper-container .swiper-slide::after {
   content: "";
@@ -153,62 +456,33 @@ section {
   height: 12px;
   margin: 0 6px;
 }
-@media screen and (max-width: 768px) {
-  #banner {
-    padding-top: 79px;
-  }
-  #banner .swiper-container {
-    height: 735px;
-  }
-  #banner .swiper-container .swiper-slide .text_cont {
-    top: 160px;
-    left: 5px;
-    display: flex;
-    flex-direction: column;
-  }
-  #banner .swiper-container .swiper-slide .text_cont h2 {
-    font-size: 32px;
-    line-height: 1.4em;
-    text-align: center;
-  }
-  #banner .swiper-container .swiper-slide .text_cont p {
-    text-align: center;
-    font-size: 18px;
-  }
-  #banner .swiper-container .swiper-slide .text_cont a {
-    margin: 30px auto 0;
-    font-size: 24px;
-  }
-  #banner .swiper-container .swiper-slide:nth-child(2) p:nth-of-type(1) {
-    font-size: 24px;
-  }
-  #banner .swiper-container .swiper-slide:nth-child(3) h2 {
-    font-size: 24px;
-    line-height: 1.4em;
-  }
-  #banner .swiper-container .swiper-pagination .swiper-pagination-bullet {
-    width: 8px;
-    height: 8px;
-  }
-}
 /* banner结束 */
 /* 简介开始 */
-#jianjie {
+#jianjie{
   background: #f6f6f6;
   padding-top: 110px;
 }
 #jianjie .container {
-  padding-bottom: 110px;
-  height: 100%;
+  padding-bottom: 70px;
+  /*height: 100%;*/
   background: url(../img/jianjie_bg.png) no-repeat bottom -40px center;
 }
 #jianjie h2 {
   font-size: 36px;
+  font-weight: bolder;
 }
 #jianjie .container > p {
   font-size: 18px;
+  font-weight: lighter;
   line-height: 32px;
   margin-top: 28px;
+}
+#jianjie .container > p:nth-of-type(1){
+  margin-bottom: 0;
+}
+#jianjie .container > p:nth-of-type(2){
+  margin-top: 0px;
+  font-weight: bold;
 }
 #jianjie .container > .row {
   margin-top: 76px;
@@ -216,16 +490,12 @@ section {
 #jianjie .container > .row p {
   margin-top: 36px;
   font-size: 16px;
-}
-@media screen and (max-width: 768px) {
-  #jianjie .container .row > div:nth-of-type(1),
-  #jianjie .container .row > div:nth-of-type(2) {
-    margin-bottom: 20px;
-  }
+  padding: 0 18px;
+  font-weight: bold;
 }
 /* 简介结束 */
 /* 源自开始 */
-#source {
+#source{
   padding-top: 110px;
 }
 #source .container {
@@ -234,18 +504,17 @@ section {
 }
 #source h2 {
   font-size: 36px;
+  line-height: 48px;
+  font-weight: bold;
 }
 #source .col-md-10 p {
   font-size: 18px;
+  font-weight: lighter;
   line-height: 30px;
   margin-top: 26px;
 }
 #source .source_img {
   margin-top: 30px;
-}
-#source .source_cont {
-  height: 405px;
-  background: red;
 }
 #source .thumbnail {
   padding: 0;
@@ -266,23 +535,24 @@ section {
   font-size: 16px;
 }
 #source .thumbnail img {
-  max-width: 100%;
+  width: 100%;
 }
 /* 源自结束 */
 /* 教育方式开始 */
 #education {
-  padding-top: 42px;
+  padding-top: 110px;
 }
 #education .container {
-  padding-bottom: 125px;
-  background-size: 80% auto;
+  padding-bottom: 70px;
 }
 #education h2 {
   font-size: 36px;
-  line-height: 64px;
+  font-weight: bold;
+  line-height: 48px;
 }
 #education .container > p {
   font-size: 18px;
+  font-weight: lighter;
 }
 #education h2 + p + p {
   margin-bottom: 28px;
@@ -297,23 +567,23 @@ section {
   position: relative;
 }
 #education img {
-  max-width: 100%;
-}
-#education .education_list img {
   width: 100%;
 }
 #education h4 {
   font-size: 20px;
+  font-weight: bold;
   color: #1b2a74;
   margin-top: 13px;
 }
 #education h4 + p {
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 18px;
   color: #1b2a74;
 }
 #education .col-xs-3 img {
   width: 40px;
+  margin-top: 10px;
 }
 #education .education_hr {
   position: absolute;
@@ -330,11 +600,11 @@ section {
 /* 教育方式结束 */
 /* 案例开始 */
 #case {
-  padding-top: 78px;
+  padding-top: 110px;
   background-color: #f6f6f6;
 }
 #case .container {
-  padding-bottom: 90px;
+  padding-bottom: 70px;
 }
 #case .container h2 {
   font-size: 36px;
@@ -342,26 +612,24 @@ section {
   font-weight: 360;
   margin-bottom: 62px;
 }
-@media screen and (max-width: 768px) {
-  #case .container h2 {
-    font-size: 28px;
-    line-height: 46px;
-    font-weight: 360;
-    margin-bottom: 62px;
-  }
-}
-.modular {
+#case .modular {
   background: #fff;
   padding: 20px 0;
   border-radius: 48px;
 }
 #case .modular .row {
-  padding: 15px;
+  margin: 0;
+  padding: 20px;
 }
 #case h4 {
   line-height: 1.4em;
+  font-weight: lighter;
+}
+#case p{
+  font-size: 18px;
 }
 #case p span {
+  font-weight: lighter;
   color: #cd0303;
 }
 #case .col-md-4 img {
@@ -374,7 +642,7 @@ section {
 /* 案例结束 */
 /* 四大不同开始 */
 #dif {
-  padding-top: 110px;
+  padding-top: 110px;;
   background: #1b2a74;
 }
 #dif .container {
@@ -382,122 +650,85 @@ section {
 }
 #dif h2 {
   font-size: 36px;
+  line-height: 1.4em;
   color: #fff;
   margin-bottom: 56px;
 }
-#dif .swiper-slide {
-  background-color: transparent;
-}
-#dif .swiper-pagination {
-  position: static;
-}
-#dif .swiper-pagination .swiper-pagination-bullet {
-  margin: 0 4px;
-  width: 10px;
-  height: 10px;
-}
-#dif .thumbnail {
-  padding: 24px;
-  border-radius: 20px;
-}
-#dif .thumbnail img {
+#dif img {
   width: 100%;
-}
-#dif .thumbnail .caption h3 {
-  margin-top: 8px;
-  font-size: 20px;
-  color: #1b2a74;
-}
-#dif .thumbnail .caption p {
-  color: #1b2a74;
-  font-size: 16px;
 }
 #dif .dif_lt {
   float: left;
-  width: 42%;
-  margin-left: 6%;
+  width: 43%;
+  margin-left: 5%;
 }
 #dif .dif_rt {
   float: right;
-  width: 42%;
-  margin-right: 6%;
+  width: 43%;
+  margin-right: 5%;
 }
 #dif .pos_pk {
   position: absolute;
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-#dif .pos_pk img {
-  max-width: 100%;
+#dif .swiper-container{
+  padding: 0 38px 68px;
 }
-@media screen and (max-width: 768px) {
-  #dif .thumbnail {
-    padding: 12px;
-    border-radius: 10px;
-  }
-  #dif .dif_lt {
-    float: none;
-    width: 80%;
-    margin-left: 10%;
-  }
-  #dif .dif_rt {
-    float: none;
-    width: 80%;
-    margin-left: 10%;
-  }
-  #dif .pos_pk {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  #dif .pos_pk img {
-    max-width: 100%;
-  }
-  #dif .swiper-slide:nth-child(2) .pos_pk {
-    top: 47%;
-  }
-  #dif .swiper-slide:nth-child(3) .pos_pk {
-    top: 50%;
-  }
-  #dif .swiper-slide:nth-child(4) .pos_pk {
-    top: 52%;
-  }
-  .swiper-button-next {
-    right: 0;
-  }
-  .swiper-button-prev {
-    left: 0;
-  }
+#dif .swiper-button-next, 
+#dif .swiper-button-prev{
+  position: absolute;
+  top: 50%;
+  width: 63px;
+  height: 112px;
+  margin-top: 0;
+  transform: translate(0,-50%);
+}
+#dif .swiper-button-prev{
+  left: 0;
+  background: url(../img/dif_lt_white.png) no-repeat;
+  background-size: cover;
+}
+#dif .swiper-button-next{
+  right: 0;
+  background: url(../img/dif_rt_white.png) no-repeat;
+  background-size: cover;
+}
+#dif .pos_pk img {
+  width: 100%;
+}
+#dif .swiper-container .swiper-pagination {
+  width: 100%;
+  margin-top: 40px;
+  margin-left: -30px;
+}
+#dif .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #fff;
 }
 /* 四大不同结束 */
 /* 架构图开始 */
-#framework {
-  padding-top: 110px;
-}
 #framework .container {
-  padding-bottom: 120px;
+  padding-top: 110px;
+  padding-bottom: 110px;
 }
 #framework h2 {
   font-size: 36px;
-  font-weight: 200;
-}
-#framework h2 span {
-  font-weight: 400;
+  font-weight: lighter;
 }
 #framework h2 + p {
   font-size: 48px;
-  font-weight: 200;
+  font-weight: lighter;
   line-height: 60px;
   margin-top: 42px;
 }
 #framework .col-md-4 {
-  margin-top: 30px;
+  margin-top: 24px;
 }
 #framework .thumbnail_box {
   background-color: #f4f4f4;
@@ -511,7 +742,7 @@ section {
   width: 100%;
 }
 #framework .center-block {
-  max-width: 100%;
+  width: 100%;
 }
 #framework .thumbnail {
   padding: 0;
@@ -521,15 +752,16 @@ section {
 }
 #framework .thumbnail h3 {
   font-size: 20px;
+  font-weight: bold;
   color: #1b2a74;
   margin-top: 10px;
 }
 #framework .thumbnail h3 + p {
-  font-size: 14px;
+  font-size: 13px;
   color: #1b2a74;
 }
 #framework .thumbnail ol {
-  font-size: 12px;
+  font-size: 13px;
   color: #1b2a74;
   padding-left: 1em;
   margin-bottom: 0;
@@ -559,31 +791,33 @@ section {
   padding-top: 110px;
 }
 #firtest .container {
-  padding-bottom: 110px;
+  padding-bottom: 70px;
 }
 #firtest h3 {
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: bold;
   color: #fff;
 }
 #firtest p {
-  font-size: 18px;
+  font-size: 14px;
   color: #fff;
 }
 #firtest input[type=text],
 #firtest input[type=number] {
   height: 52px;
   margin-bottom: 8px;
-  font-size: 18px;
+  font-size: 14px;
 }
 #firtest textarea {
   height: 136px;
   margin-bottom: 8px;
-  font-size: 18px;
+  font-size: 14px;
 }
 #firtest button[type=submit] {
   padding: 10px 60px;
   border-radius: 20px;
   font-size: 22px;
+  font-weight: bold;
   line-height: 22px;
   color: #1b2a74;
 }
@@ -604,7 +838,7 @@ section {
 /* 联系我们开始 */
 #contact {
   background-color: #1b2a74;
-  padding-top: 80px;
+  padding-top: 110px;
 }
 #contact .container {
   padding-bottom: 200px;
@@ -612,6 +846,7 @@ section {
 }
 #contact h3 {
   font-size: 18px;
+  font-weight: bold;
 }
 #contact p {
   font-size: 16px;
@@ -631,3 +866,181 @@ section {
   margin-bottom: 20px;
 }
 /* 联系我们结束 */
+
+
+@media (max-width: 1200px) {
+  #head .navbar .navbar-brand {
+    width: 220px;
+    padding-top: 24px;
+  }
+  #dif .pos_pk {
+    width: 120px;
+    height: 120px;
+  }
+  #dif .swiper-button-next, 
+  #dif .swiper-button-prev{
+    width: 44px;
+    height: 78px;
+    margin-top: 0;
+    transform: translate(0,-50%);
+  }
+}
+@media screen and (max-width: 768px) {
+  #head .navbar .navbar-brand {
+    padding-top: 8px;
+  }
+  /* banner开始 */
+  #banner {
+    padding-top: 79px;
+  }
+  #banner .swiper-container {
+    height: 680px;
+  }
+  #banner .swiper-container .swiper-slide .text_cont {
+    padding: 0 15px;
+    top: 160px;
+    width: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #banner .swiper-container .swiper-slide .text_cont h2 {
+    font-size: 24px;
+    line-height: 1.4em;
+    text-align: center;
+  }
+  #banner .swiper-container .swiper-slide .text_cont p {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6em;
+  }
+  #banner .swiper-container .swiper-slide .text_cont a {
+    margin: 10px auto 0;
+    font-size: 24px;
+  }
+  #banner .swiper-container .swiper-slide:nth-child(1) h2{
+    font-size: 28px;
+  }
+  #banner .swiper-container .swiper-slide:nth-child(2) p:nth-of-type(1) {
+    font-size: 22px;
+  }
+  #banner .swiper-container .swiper-slide:nth-child(2) .text_cont{
+    text-align: center;
+  }
+  #banner .swiper-container .swiper-slide:nth-child(3) h2 {
+    font-size: 24px;
+    line-height: 1.4em;
+  }
+  #banner .swiper-container .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+  /* banner结束 */
+  /* 简介开始 */
+  #jianjie {
+    padding-top: 42px;
+  }
+  #jianjie .container > .row{
+    margin-top: 40px;
+  }
+  #jianjie .container .row > div:nth-of-type(1),
+  #jianjie .container .row > div:nth-of-type(2) {
+    margin-bottom: 20px;
+  }
+  #source {
+    padding-top: 90px;
+  }
+  /* 简介结束 */
+  /* 教育方式开始 */
+  #education {
+    padding-top: 42px;
+  }
+  #education .container{
+    padding-bottom: 42px;
+  }
+  /* 教育方式结束 */
+  /* 案例开始 */
+  #case {
+    padding-top: 42px;
+    background-color: #f6f6f6;
+  }
+  #case .container h2 {
+    font-size: 28px;
+    line-height: 46px;
+    font-weight: 360;
+    margin-bottom: 42px;
+  }
+  #case .container {
+    padding-bottom: 42px;
+  }
+  #case .col-md-8 img{
+    width: 32px;
+  }
+  /* 案例结束 */
+  /* 四大不同开始 */
+  #dif{
+    padding-top: 90px;
+  }
+  #dif .container{
+    padding-bottom: 42px;
+  }
+  #dif .swiper-slide .dif_lt {
+    float: none;
+    width: 92%;
+    margin-left: 4%;
+  }
+  #dif .dif_rt {
+    float: none;
+    width: 92%;
+    margin-left: 4%;
+    margin-top: 20px;
+  }
+  #dif .pos_pk {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -44%);
+  }
+  #dif .pos_pk img {
+    width: 100%;
+  }
+  #dif .swiper-button-next, 
+  #dif .swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    width: 34px;
+    height: 60px;
+    margin-top: 0;
+    transform: translate(0,-100%);
+    outline: none;
+  }
+  /* 四大不同结束 */
+  /* 架构图开始 */
+  #framework .container{
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  #pro {
+    padding-top: 70px;
+  }
+  /* 架构图结束 */
+  /* 免费试课开始 */
+  #firtest {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  #firtest .container{
+    padding-bottom: 0px;
+  }
+
+  /* 免费试课结束 */
+  /* 联系我们开始 */
+  #contact .container {
+    padding-top: 42px;
+    padding-bottom: 100px;
+    color: #fff;
+  }
+  /* 联系我们结束 */
+}
