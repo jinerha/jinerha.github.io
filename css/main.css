@@ -997,11 +997,11 @@ section {
   }
   #dif .pos_pk {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -44%);
+    transform: translate(-50%, -50%);
   }
   #dif .pos_pk img {
     width: 100%;
